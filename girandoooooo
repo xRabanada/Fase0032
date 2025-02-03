@@ -58,7 +58,7 @@
         function solicitarSenha() {
             var senha = prompt("Digite a senha para continuar:");
             if (senha && senha.trim().toLowerCase().replace(/\s+/g, " ") === "eu sabia") {
-                location.href = 'https://seu-link-externo.com';
+                location.href = 'https://xrabanada.github.io/Fase0032/bobinho.html';
             } else {
                 alert("Senha incorreta! Tente novamente.");
             }
