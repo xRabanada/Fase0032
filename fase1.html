@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h3 {
+            color: #555;
+            margin: 5px 0;
+        }
+        .hint {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            text-align: left;
+            max-width: 500px;
+        }
+        .hint pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function solicitarSenha() {
+            var senha = prompt("Digite a senha para continuar:");
+            if (senha && senha.toLowerCase() === "ragnatales") {
+                location.href = 'https://seu-link-externo.com';
+            } else {
+                alert("Senha incorreta! Tente novamente.");
+            }
+        }
+    </script>
+
+<script>
+    // Bloqueia botão direito do mouse
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</head>
+<body>
+    <div class="content">
+        <h1>Introdução:</h1>
+        <h3>Bem, que bom que decidiu continuar, espero que esteja tão animado quanto eu com este evento, hehe. Bem, deixarei aqui algumas dicas para te ajudar. Você pode deixar aberto em alguma aba ou até mesmo voltar aqui sempre que precisar.</h3>
+        
+        <div class="hint">
+            <h3>Código Morse:</h3>
+            <pre>.- / ... . -. .... .- / .--. .-. .- / .--. .- ... ... .- .-. / / .-. .- --. -. .- - .- .-.. . ...</pre>
+        </div>
+        
+        <div class="hint">
+            <h3>Código de Barras:</h3>
+            <img src="https://i.imgur.com/UByXGKx.png" alt="Código de Barras">
+        </div>
+        
+        <div class="hint">
+            <h3>Código AES-128-ECB:</h3>
+            <pre>MayJxc0ZUbC1GBH9f3Qp9eh4yHQoj1Qk7gMrnUF_wwc</pre>
+            <h3>Chave: 123</h3>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button class="button" onclick="solicitarSenha()">Continuar</button>
+    </div>
+</body>
+</html>

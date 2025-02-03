@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 11</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .code {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style><script>
+    // Bloqueia botão direito do mouse
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</head>
+<body>
+    <h1>Parabéns, você acertou tudo!</h1>
+    <h2>É, você talvez venha a merecer...</h2>
+    <p>Envie no meu privado do Discord o seguinte código:</p>
+    <div class="code">JJ#EIIXLWOE</div>
+    <p>Caso você tenha sido o primeiro, parabéns! Você ganhou 40k de cash :)</p>
+</body>
+</html>

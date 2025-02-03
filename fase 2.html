@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 2</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 800px;
+            text-align: center;
+        }
+        h3 {
+            color: #555;
+            margin: 5px 0;
+        }
+        .hint {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            text-align: left;
+            max-width: 500px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .small-button {
+            padding: 6px 12px;
+            font-size: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #000000;
+            color: white;
+        }
+        .button {
+            padding: 8px 16px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function solicitarSenha() {
+            var senha = prompt("Assistindo 3 horas de live e dando o apoio no site do Tales, quantos pontos eu vou ter?");
+            if (senha && senha.trim() === "154") {
+                location.href = 'https://seu-link-externo.com';
+            } else {
+                alert("Resposta incorreta! Tente novamente.");
+            }
+        }
+    </script>
+
+<script>
+    // Bloqueia botão direito do mouse
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</head>
+<body>
+    <div class="content">
+        <h1>Fase 2</h1>
+        <div class="hint">
+            <h3>Ok, você realmente está espertinho, hehe.</h3>
+            <p>Bem, queria aproveitar esse evento para explicar algumas mecânicas da nossa lojinha da Twitch...</p>
+            <p>A cada 10 minutos você ganha 3 pontos.</p>
+            <p>A cada subscribe/prime que você der na Twitch, você ganha na hora 20 pontos e o nosso hat de streamer.</p>
+            <p>A cada mês que você apoiar a nossa live lá no site do Ragnatales (<a href='https://ragnatales.com.br/profile/personal' target='_blank'>clique aqui para ir para o site</a>), você ganha 100 pontos, hat de streamer e participa do sorteio mensal de passes de batalha para os apoiadores.</p>
+            <p><strong>Para que servem esses pontos?</strong> Você pode trocar os pontos por itens como VIP, passe de batalha, itens de farm e muito mais na nossa lojinha.</p>
+            <p>Deem uma olhada clicando aqui: <a href="https://streamelements.com/xrabanada/store" target="_blank">Loja do StreamElements</a></p>
+            <p>Além disso, em todo sorteio na live, você pode usar seus pontos para comprar tickets, aumentando suas chances de ganhar.</p>
+            
+            <div class="button-container">
+                <button class="small-button" onclick="window.open('https://discord.gg/nMFbMpgGkU', '_blank')">Ir para o Discord</button>
+                <button class="small-button" onclick="window.open('https://i.imgur.com/kOafiYD.png', '_blank')">Ver Exemplo de Print</button>
+                <button class="small-button" onclick="window.open('https://twitch.tv/xRabanada', '_blank')">Twitch do xRabanada</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <button class="button" onclick="solicitarSenha()">Continuar</button>
+    </div>
+</body>
+</html>

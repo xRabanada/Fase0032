@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 8</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        .shake {
+            animation: shake 0.2s ease-in-out;
+        }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-5px, 0); }
+            50% { transform: translate(5px, 0); }
+            75% { transform: translate(-5px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+        .button-container {
+            margin-top: 20px;
+            display: none;
+        }
+        .button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        let clickCount = 0;
+        function shakeBox() {
+            const box = document.getElementById("box");
+            clickCount++;
+            box.classList.add("shake");
+            setTimeout(() => box.classList.remove("shake"), 200);
+            
+            if (clickCount === 15) {
+                box.style.backgroundColor = "red";
+                const num = document.createElement("div");
+                num.textContent = "15";
+                num.style.position = "absolute";
+                num.style.top = "-30px";
+                num.style.fontSize = "20px";
+                num.style.color = "black";
+                box.appendChild(num);
+            }
+            if (clickCount === 23) {
+                document.getElementById("button-container").style.display = "block";
+            }
+        }
+        function solicitarSenha() {
+            var senha = prompt("Digite a senha para continuar:");
+            if (senha && senha.trim() === "8") {
+                location.href = 'https://seu-link-externo.com';
+            } else {
+                alert("Senha incorreta! Tente novamente.");
+            }
+        }
+    </script><script>
+    // Bloqueia botão direito do mouse
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</head>
+<body>
+    <div id="box" class="box" onclick="shakeBox()"></div>
+    <div id="button-container" class="button-container">
+        <button class="button" onclick="solicitarSenha()">Continuar</button>
+    </div>
+</body>
+</html>
