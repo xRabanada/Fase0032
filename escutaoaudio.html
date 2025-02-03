@@ -15,12 +15,9 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            position: relative;
         }
         h1 {
-            color: #333;
-        }
-
-  h3 {
             color: #333;
         }
         .button-container {
@@ -38,6 +35,15 @@
         .button:hover {
             background-color: #218838;
         }
+        .hidden-hint {
+            position: absolute;
+            top: 70%;
+            left: 15%;
+            font-size: 14px;
+            color: #333;
+            opacity: 0.1;
+            pointer-events: none;
+        }
     </style>
     <script>
         function solicitarSenha() {
@@ -48,27 +54,27 @@
                 alert("Senha incorreta! Tente novamente.");
             }
         }
-    </script><script>
-    // Bloqueia botão direito do mouse
-    document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-    });
-
-    // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
-    document.addEventListener("keydown", function (e) {
-        if (
-            e.key === "F12" || 
-            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
-            (e.ctrlKey && e.key === "U")
-        ) {
+    </script>
+    <script>
+        // Bloqueia botão direito do mouse
+        document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
-        }
-    });
-</script>
+        });
 
+        // Bloqueia teclas de desenvolvedor (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+        document.addEventListener("keydown", function (e) {
+            if (
+                e.key === "F12" || 
+                (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+    </script>
 </head>
 <body>
-    <h1>Eu tive que ouvir esse áudio 10x...</h1><h3>Eu botaria no capcut</h1>
+    <h1>Eu tive que ouvir esse áudio 10x...</h1>
     <audio controls>
         <source src="som.mp3" type="audio/mpeg">
         Seu navegador não suporta o elemento de áudio.
@@ -76,5 +82,6 @@
     <div class="button-container">
         <button class="button" onclick="solicitarSenha()">Continuar</button>
     </div>
+    <div class="hidden-hint">Eu botaria no CapCut</div>
 </body>
 </html>
